@@ -2,7 +2,7 @@ name: production workflow
 on: [push]
 jobs:
   tests:
-    runs-on: [ubuntu-latest, ubuntu-22.04, ubuntu-20.04, self-hosted]
+    runs-on: [self-hosted, linux]
     steps:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
