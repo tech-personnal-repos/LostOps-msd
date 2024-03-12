@@ -10,6 +10,11 @@ jobs:
         with:
           php-version: '8.2'
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
+      - name: Set default env file
+        run: |
+          if test -f ".env"; then
+            echo "${{ secrets.DEFAULT_ENV }}" > .env
+          fi
       - name: Composer install
         run: composer install -n --prefer-dist
 #      - name: Prepare Laravel Application
