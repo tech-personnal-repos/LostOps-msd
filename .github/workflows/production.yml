@@ -12,7 +12,7 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
       - name: Set default env file
         run: |
-          if test -f ".env" != 0; then
+          if ! test -f ".env"; then
             echo "${{ secrets.DEFAULT_ENV }}" > .env
           fi
       - name: Composer install
@@ -25,12 +25,13 @@ jobs:
         run: php artisan test
   build:
     runs-on: ubuntu-22.04
+    needs: tests
     steps:
       - uses: actions/checkout@v4
       - name: setup node 20
         uses: actions/setup-node@v4
         with:
-          node-verison: 20
+          node-version: 20
           cache: npm
       - name: clean install
         run: npm ci
