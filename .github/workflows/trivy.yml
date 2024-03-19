@@ -27,8 +27,12 @@ jobs:
     runs-on: "ubuntu-22.04"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
+      - name: Set default env file
+        run: |
+          if ! test -f ".env"; then
+            echo "${{ secrets.DEFAULT_ENV }}" > .env
+          fi
       - name: Build an image from Dockerfile
         run: |
           docker build -t docker.io/my-organization/my-app:${{ github.sha }} .
