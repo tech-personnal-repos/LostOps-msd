@@ -1,5 +1,5 @@
 # Utilisez une image Docker officielle pour PHP 7.4 avec Apache
-FROM php:7.4-apache
+FROM php:8.2-apache
 
 # Installez les extensions PHP nécessaires
 RUN docker-php-ext-install pdo_mysql
@@ -11,6 +11,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Copiez les fichiers de l'application dans le conteneur
 COPY . /var/www/html/
+COPY .env /var/www/html/.env
 
 # Installez les dépendances de l'application
 RUN composer install
