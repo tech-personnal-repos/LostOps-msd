@@ -1,4 +1,4 @@
-[![CodeQL](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/codeql-analysis.yml) [![production workflow](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/production.yml/badge.svg)](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/production.yml)
+[![CodeQL](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/codeql-analysis.yml) [![production workflow](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/production.yml/badge.svg)](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/production.yml) [![trivy](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/trivy.yml/badge.svg)](https://github.com/tech-personnal-repos/LostOps-msd/actions/workflows/trivy.yml)
 
 # Sample app
 
