@@ -12,6 +12,8 @@ jobs:
           cache: npm
       - name: clean install
         run: npm ci
+      - name: running prod env
+        run: npm run prod
   tests:
     runs-on: ubuntu-22.04
     needs: build
@@ -35,3 +37,9 @@ jobs:
       #          php artisan key:generate
       - name: Run tests
         run: php artisan test
+  # deploy:
+  #   runs-on: ubuntu-22.04
+  #   needs: tests
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name:
